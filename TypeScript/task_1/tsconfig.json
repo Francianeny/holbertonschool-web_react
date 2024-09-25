@@ -8,6 +8,10 @@
 	  "allowJs": true,
 	  "moduleResolution": "node"
 	},
-	"include": ["src/**/*.ts"],
-	"exclude": ["task_1/js/**/*.ts"]
+	"include": [
+	  "src/**/*.ts"
+	],
+	"exclude": [
+	  "task_1/js/**/*.ts"
+	]
   }
