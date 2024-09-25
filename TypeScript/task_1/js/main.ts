@@ -28,3 +28,47 @@ const book2: Book = {
 // Call the display function for each book
 displayBook(book1);
 displayBook(book2);
+
+// Définir l'interface Teacher
+interface Teacher {
+    name: string;
+    subject: string;
+    yearsOfExperience: number;
+
+    teach(): void;
+    evaluate(studentId: string): string;
+}
+
+// Interface Directors qui étend Teacher
+interface Directors extends Teacher {
+    numberOfReports: number;
+}
+
+// Implémentation de la classe SchoolDirector
+class SchoolDirector implements Directors {
+    name: string;
+    subject: string;
+    yearsOfExperience: number;
+    numberOfReports: number;
+
+    constructor(name: string, subject: string, yearsOfExperience: number, numberOfReports: number) {
+        this.name = name;
+        this.subject = subject;
+        this.yearsOfExperience = yearsOfExperience;
+        this.numberOfReports = numberOfReports;
+    }
+
+    teach(): void {
+        console.log(`${this.name} enseigne ${this.subject}.`);
+    }
+
+    evaluate(studentId: string): string {
+        return `L'étudiant avec l'ID ${studentId} a été évalué.`;
+    }
+}
+
+// Exemple d'utilisation de SchoolDirector
+const director = new SchoolDirector("Alice", "Mathématiques", 10, 5);
+director.teach();
+console.log(`Nombre de rapports : ${director.numberOfReports}`);
+console.log(director.evaluate("12345"));
