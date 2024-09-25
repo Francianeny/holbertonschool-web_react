@@ -9,9 +9,9 @@
 	  "moduleResolution": "node"
 	},
 	"include": [
-	  "src/**/*.ts"
+	  "js/**/*.ts"
 	],
 	"exclude": [
-	  "task_1/js/**/*.ts"
+	  "js/**/*.js"
 	]
   }
