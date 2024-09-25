@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "ts-node js/main.ts",
 		"start-dev": "webpack-dev-server --open",
-		"build": "webpack",
+		"build": "tsc js/main.ts --outDir js",
 		"test": "jest"
 	},
 	"keywords": [],
@@ -26,6 +26,7 @@
 		"source-map": "^0.7.3",
 		"ts-jest": "^29.2.5",
 		"ts-loader": "^6.2.0",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.6.2",
 		"webpack": "^5.94.0",
 		"webpack-cli": "^5.1.4",
