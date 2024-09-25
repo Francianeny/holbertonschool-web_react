@@ -8,9 +8,6 @@
 	  "allowJs": true,
 	  "moduleResolution": "node"
 	},
-	"include": [
-	  "src/**/*.ts",
-	  "task_1/js/**/*.ts" // Assurez-vous que cette ligne est présente
-	]
-}
-
+	"include": ["src/**/*.ts"],
+	"exclude": ["task_1/js/**/*.ts"]
+  }
