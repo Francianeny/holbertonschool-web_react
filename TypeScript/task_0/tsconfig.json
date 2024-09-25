@@ -8,6 +8,6 @@
 	  "allowJs": true,
 	  "moduleResolution": "node"
 	},
-	"include": ["src/**/*.ts"], // Inclure vos fichiers .ts
-	"exclude": ["node_modules"]
+	"include": ["src/**/*.ts"],  // Inclut tous les fichiers .ts dans src
+	"exclude": ["node_modules", "js"] // Exclut node_modules et js si non nécessaire
   }
