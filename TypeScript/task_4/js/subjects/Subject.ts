@@ -1,13 +1,13 @@
 namespace Subjects {
     export class Subject {
-        private teacher: Teacher;  // Propriété teacher de type Teacher
+        protected teacher: Teacher | undefined; // Utilisation de protected pour l'accès dans les sous-classes
 
-        setTeacher(teacher: Teacher): void {  // Méthode pour définir le teacher
+        setTeacher(teacher: Teacher): void {
             this.teacher = teacher;
         }
 
-        // Getter pour accéder à l'enseignant puisqu'il est privé
-        getTeacher(): Teacher {
+        // Ajoutez un getter pour accéder au teacher
+        getTeacher(): Teacher | undefined {
             return this.teacher;
         }
     }
