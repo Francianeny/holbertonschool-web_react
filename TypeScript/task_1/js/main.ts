@@ -67,8 +67,19 @@ class SchoolDirector implements Directors {
     }
 }
 
+// Définir l'interface pour la fonction printTeacher
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string; // Prend deux chaînes de caractères en entrée et retourne une chaîne
+}
+
+// Implémenter la fonction printTeacher
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+    return `${firstName.charAt(0)}. ${lastName}`; // Retourne la première lettre de firstName et le nom de famille
+};
+
 // Exemple d'utilisation de SchoolDirector
 const director = new SchoolDirector("Alice", "Mathématiques", 10, 5);
 director.teach();
 console.log(`Nombre de rapports : ${director.numberOfReports}`);
 console.log(director.evaluate("12345"));
+console.log(printTeacher("John", "Doe"));
