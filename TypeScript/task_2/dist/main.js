@@ -32,24 +32,23 @@ function createEmployee(salary) {
 }
 // Fonction de garde pour vérifier si un employé est un Director
 function isDirector(employee) {
-    return employee.workDirectorTasks !== undefined;
+    return employee instanceof Director; // Utilisation de instanceof pour une vérification de type
+}
+// Fonction pour exécuter le travail
+function executeWork(employee) {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    }
+    else {
+        return employee.workTeacherTasks();
+    }
 }
 // Exécuter les méthodes des classes retournées
 const employee1 = createEmployee(200);
 console.log(employee1.workFromHome()); // Cannot work from home
 console.log(employee1.getCoffeeBreak()); // Cannot have a break
-if (isDirector(employee1)) {
-    console.log(employee1.workDirectorTasks()); // Ne sera pas appelé car ce n'est pas un Director
-}
-else {
-    console.log(employee1.workTeacherTasks()); // Getting to work
-}
+console.log(executeWork(employee1)); // Getting to work
 const employee2 = createEmployee(1000);
 console.log(employee2.workFromHome()); // Working from home
 console.log(employee2.getCoffeeBreak()); // Getting a coffee break
-if (isDirector(employee2)) {
-    console.log(employee2.workDirectorTasks()); // Getting to director tasks
-}
-else {
-    console.log(employee2.workTeacherTasks()); // Ne sera pas appelé car c'est un Director
-}
+console.log(executeWork(employee2)); // Getting to director tasks
