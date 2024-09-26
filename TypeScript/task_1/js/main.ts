@@ -77,9 +77,47 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
     return `${firstName.charAt(0)}. ${lastName}`; // Retourne la première lettre de firstName et le nom de famille
 };
 
+// Interface pour le constructeur de StudentClass
+interface StudentConstructor {
+    new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+// Interface pour la classe StudentClass
+interface StudentClassInterface {
+    workOnHomework(): string; // Méthode pour renvoyer "Currently working"
+    displayName(): string;    // Méthode pour renvoyer le prénom (firstName)
+}
+
+// Implémenter la classe StudentClass en se basant sur l'interface
+class StudentClass implements StudentClassInterface {
+    firstName: string;
+    lastName: string;
+
+    // Le constructeur accepte firstName et lastName
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    // Méthode workOnHomework
+    workOnHomework(): string {
+        return "Currently working";
+    }
+
+    // Méthode displayName qui retourne le firstName
+    displayName(): string {
+        return this.firstName;
+    }
+}
+
 // Exemple d'utilisation de SchoolDirector
 const director = new SchoolDirector("Alice", "Mathématiques", 10, 5);
 director.teach();
 console.log(`Nombre de rapports : ${director.numberOfReports}`);
 console.log(director.evaluate("12345"));
 console.log(printTeacher("John", "Doe"));
+
+const student = new StudentClass("John", "Doe");
+
+console.log(student.displayName());
+console.log(student.workOnHomework());
