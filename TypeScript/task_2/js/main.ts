@@ -64,7 +64,21 @@ function executeWork(employee: Director | Teacher): string {
     }
 }
 
-// Exécuter les méthodes des classes retournées
+// Type littéral de chaîne pour Subjects
+type Subjects = 'Math' | 'History';
+
+// Fonction pour enseigner une classe
+function teachClass(todayClass: Subjects): string {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    } else if (todayClass === 'History') {
+        return 'Teaching History';
+    } else {
+        throw new Error('Invalid class'); // Erreur si la classe n'est pas valide
+    }
+}
+
+// Exécuter des exemples d'employés
 const employee1 = createEmployee(200);
 console.log(employee1.workFromHome()); // Cannot work from home
 console.log(employee1.getCoffeeBreak()); // Cannot have a break
@@ -74,3 +88,7 @@ const employee2 = createEmployee(1000);
 console.log(employee2.workFromHome()); // Working from home
 console.log(employee2.getCoffeeBreak()); // Getting a coffee break
 console.log(executeWork(employee2)); // Getting to director tasks
+
+// Tests de la fonction teachClass
+console.log(teachClass('Math')); // Teaching Math
+console.log(teachClass('History')); // Teaching History
