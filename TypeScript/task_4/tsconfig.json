@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ES6",                    // Version du JavaScript
+        "module": "ES6",                    // Module à utiliser
+        "strict": true,                     // Activer la vérification stricte
+        "esModuleInterop": true,            // Supporter les modules CommonJS
+        "skipLibCheck": true,               // Ignorer la vérification des fichiers de définition
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",         // Résolution des modules en Node.js
+        "outDir": "./dist"                  // Dossier de sortie
+    },
+    "include": [
+        "js/**/*.ts"                        // Inclure les fichiers TypeScript dans task_2/js/
+    ],
+    "exclude": [
+        "node_modules",                     // Exclure le dossier node_modules
+        "**/*.js"                           // Exclure tous les fichiers JS
+    ]
+}
