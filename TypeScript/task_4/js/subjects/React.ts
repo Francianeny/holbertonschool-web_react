@@ -5,8 +5,9 @@ namespace Subjects {
         }
 
         getAvailableTeacher(): string {
-            if (this.getTeacher() && this.getTeacher()!.experienceTeachingReact > 0) {
-                return `Available Teacher: ${this.getTeacher()!.firstName}`;
+            const teacher = this.getTeacher(); // Obtenir le professeur
+            if (teacher && teacher.experienceTeachingReact && teacher.experienceTeachingReact > 0) {
+                return `Available Teacher: ${teacher.firstName}`;
             }
             return "No available teacher";
         }
